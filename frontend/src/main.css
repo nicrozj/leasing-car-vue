@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Nekst';
+    src: url(/fonts/Nekst-Black.ttf) format('woff2');
+  }
+}

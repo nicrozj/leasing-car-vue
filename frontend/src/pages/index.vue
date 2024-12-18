@@ -1,17 +1,15 @@
 <script setup lang="ts">
-import Counter from "@/components/Counter.vue";
+import Calculator from "@/components/calculator/Calculator.vue";
+import Header from "../components/Header.vue"
+import Carousel from "../components/carousel/Carousel.vue";
 </script>
 
 <template>
+  <Header />
   <main
-    class="flex flex-col justify-center items-center gap-8 h-screen pb-[20vh]"
+    class="flex flex-col gap-24 mx-auto mt-5 px-12"
   >
-    <div class="flex items-start gap-3">
-      <h1 class="text-4xl text-stone-600">
-        Vue + Vite + Tailwind + Typescript
-      </h1>
-      <span class="text-stone-500 text-lg">template</span>
-    </div>
-    <Counter />
+  <Carousel />
+  <Calculator />
   </main>
 </template>

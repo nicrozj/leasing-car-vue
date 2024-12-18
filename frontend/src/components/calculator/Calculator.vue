@@ -1,0 +1,47 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+import UH1 from '../UH1.vue';
+import UH3 from '../UH3.vue';
+import UP from '../UP.vue';
+import UInputSlider from '../UInputSlider.vue';
+import UButton from '../UButton.vue';
+
+const costInput = ref(1000000);
+const initialPaymentInput = ref(100000);
+const periodInput = ref(12);
+
+
+
+</script>
+<template>
+    <section class="flex flex-col mb-20">
+        <UH1 classes="text-accent w-1/2">Рассчитайте стоимость автомобиля в лизинг</UH1>
+        <div class="grid grid-cols-3 space-between gap-6 mt-8">
+            <UInputSlider type="number" label="Стоимость автомобиляx" v-model="costInput" :min="1000000" :max="3300000">
+                <span class="text-3xl font-nekst text-smoke-300">₽</span>
+            </UInputSlider>
+            <UInputSlider type="number" label="Первоначальный взнос" v-model="initialPaymentInput" :min="200000"
+                :max="3300000">
+                <div class="bg-smoke-200 w-full h-full flex items-center justify-center rounded-xl">
+                    <UH3 classes="text-smoke-300">13%</UH3>
+                </div>
+            </UInputSlider>
+            <UInputSlider type="date" label="Срок лизинга" v-model="periodInput" :min="6" :max="60">
+                <span class="text-3xl font-nekst text-smoke-300">мес.</span>
+            </UInputSlider>
+        </div>
+        <div class="mt-11 grid grid-cols-3 gap-6 space-between items-center">
+            <div class="flex flex-col gap-2">
+                <UP>Сумма договора лизинга</UP>
+                <UH1 classes="text-smoke-300">4 467 313 ₽</UH1>
+            </div>
+            <div class="flex flex-col gap-2">
+                <UP>Ежемесячный платеж от</UP>
+                <UH1 classes="text-smoke-300">114 455 ₽</UH1>
+            </div>
+            <div>
+                <UButton type="primary" classes="w-full">Оставить заявку</UButton>
+            </div>
+        </div>
+    </section>
+</template>
