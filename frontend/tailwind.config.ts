@@ -4,6 +4,9 @@ export default {
   content: ["./src/**/*.{vue,ts}", "./index.html"],
   theme: {
     extend: {
+      backgroundImage: {
+        'custom-gradient': 'linear-gradient(-30deg, var(--tw-gradient-from) 50%, transparent 50%), linear-gradient(90deg, var(--tw-gradient-to) 50%, var(--tw-gradient-via) 50%)',
+      },
       fontFamily: {
         montserrat: "Montserrat",
         nekst: "Nekst"

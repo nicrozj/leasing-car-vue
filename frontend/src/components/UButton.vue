@@ -12,8 +12,8 @@ const { type, isLoading, disabled, classes } = defineProps<Props>();
 
 const buttonClasses = {
     "primary": "bg-primary-200 text-white hover:bg-accent active:bg-smoke-300 disabled:bg-opacity-40 disabled:text-opacity-40 transition-all delay-75",
-    "border": "border border-primary-200 bg-white text-primary hover:bg-primary hover:text-white active:bg-primary-100 disabled:opacity-40 disabled:text-opacity-40 transition-all delay-75",
-    "smoke": "bg-smoke-100 text-black hover:bg-accent hover:text-white active:bg-smoke-300 disabled:bg-opacity-40 disabled:text-opacity-40 transition-all delay-75"
+    "border": "border border-primary-200 bg-white text-primary-200 hover:bg-primary-200 hover:text-white active:bg-primary-100 disabled:opacity-40 disabled:text-opacity-40 transition-all delay-75",
+    "smoke": "bg-smoke-100 text-black hover:bg-accent hover:text-white active:bg-smoke-300 disabled:bg-opacity-40 disabled:text-opacity-40 transition-all delay-75",
 }
 
 </script>
