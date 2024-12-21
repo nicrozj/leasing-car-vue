@@ -8,3 +8,17 @@
     src: url(/fonts/Nekst-Black.ttf) format('woff2');
   }
 }
+
+.draw-circle {
+  animation: draw 2s linear infinite;
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: 251;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}

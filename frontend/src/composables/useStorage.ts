@@ -1,14 +1,21 @@
 import { ref } from "vue";
 
-const isVisibleModal = ref(false);
+const isVisibleBidModal = ref(false);
+const isVisibleMenuModal = ref(false);
 
-const toggleVisibleModal = () => {
-    isVisibleModal.value = !isVisibleModal.value;
+const toggleVisibleBidModal = () => {
+    isVisibleBidModal.value = !isVisibleBidModal.value;
+}
+
+const toggleVisibleMenuModal = () => {
+    isVisibleMenuModal.value = !isVisibleMenuModal.value;
 }
 
 export function useStorage() {
     return({
-        toggleVisibleModal,
-        isVisibleModal,
+        toggleVisibleBidModal,
+        toggleVisibleMenuModal,
+        isVisibleBidModal,
+        isVisibleMenuModal,
     });
 }

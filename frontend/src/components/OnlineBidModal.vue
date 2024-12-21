@@ -10,7 +10,7 @@ interface Props {
     class?: string;
 }
 
-const { toggleVisibleModal } = useStorage();
+const { toggleVisibleBidModal } = useStorage();
 
 const model = defineModel<boolean>();
 
@@ -30,12 +30,14 @@ const props = defineProps<Props>();
                     </div>
                     <div class="mt-8 flex justify-between w-full h-30 rounded-xl border border-smoke-200 p-7">
                         <UP class="w-[63%] text-accent/40">
-                            Нажимая на кнопку «Оставить заявку», я даю согласие <span class="text-accent">на обработку персональных данных</span>
+                            Нажимая на кнопку «Оставить заявку», я даю согласие <span class="text-accent">на обработку
+                                персональных данных</span>
                         </UP>
                         <UButton type="primary">Оставить заявку</UButton>
                     </div>
                 </div>
-                <button @click="toggleVisibleModal" class="absolute size-12 bg-smoke-200 rounded-full right-12 top-12">
+                <button @click="toggleVisibleBidModal"
+                    class="absolute size-12 bg-smoke-200 rounded-full right-12 top-12">
                     <span class="h-full material-symbols-outlined flex justify-center items-center text-smoke-300">
                         close
                     </span>

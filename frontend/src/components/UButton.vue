@@ -3,12 +3,11 @@ type ButtonType = "primary" | "border" | "smoke";
 
 interface Props {
     type: ButtonType,
-    isLoading?: boolean,
     disabled?: boolean,
     classes?: string,
 }
 
-const { type, isLoading, disabled, classes } = defineProps<Props>();
+const { type, disabled, classes } = defineProps<Props>();
 
 const buttonClasses = {
     "primary": "bg-primary-200 text-white hover:bg-accent active:bg-smoke-300 disabled:bg-opacity-40 disabled:text-opacity-40 transition-all delay-75",
