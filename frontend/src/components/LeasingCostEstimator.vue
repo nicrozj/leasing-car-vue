@@ -35,7 +35,6 @@ function calculate() {
 }
 
 const handleBlurEvent = () => {
-    console.log(123123123);
     calculate();
 };
 
