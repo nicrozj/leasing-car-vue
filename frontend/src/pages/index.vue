@@ -2,11 +2,11 @@
 import { ref } from "vue";
 
 import LeasingCostEstimator from "../components/LeasingCostEstimator.vue";
-import Header from "../components/Header.vue"
-import OnlineBidModal from "../components/OnlineBidModal.vue";
-import MenuModal from "../components/MenuModal.vue";
-import UButton from "../components/UButton.vue";
-import UPieButton from "../components/UPieButton.vue";
+import Header from "../components/layouts/Header.vue"
+import OnlineBidModal from "../components/modals/OnlineBidModal.vue";
+import MenuModal from "../components/modals/MenuModal.vue";
+import UButton from "../components/global/UButton.vue";
+import UPieButton from "../components/global/UPieButton.vue";
 import { useStorage } from "../composables/useStorage";
 
 const { isVisibleBidModal, isVisibleMenuModal } = useStorage();

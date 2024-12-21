@@ -14,7 +14,7 @@ onMounted(() => {
     if (!animate) return;
     const animation = document.getElementById(`${id}`) as SVGAnimateElement | null;
 
-    if(animation) {
+    if (animation) {
         setInterval(() => {
             animation.beginElement();
         }, duration * 1000);
@@ -26,7 +26,6 @@ onMounted(() => {
 </script>
 <template>
     <button id="pieButton" class="relative flex items-center justify-center w-max h-max group">
-        
+
     </button>
 </template>
-

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import ULink from './ULink.vue';
-import UButton from './UButton.vue';
+import ULink from '../global/ULink.vue';
+import UButton from '../global/UButton.vue';
 
-import { useStorage } from "../composables/useStorage";
+import { useStorage } from "../../composables/useStorage";
 
 interface Props {
     class?: string;

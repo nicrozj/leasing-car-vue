@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import Logo from './Logo.vue';
-import UButton from './UButton.vue';
-import UH1 from "./UH1.vue"
-import UH2 from "./UH2.vue"
-import UPieButton from './UPieButton.vue';
-import Nav from './Nav.vue';
+import Logo from '../Logo.vue';
+import UButton from '../global/UButton.vue';
+import UH1 from "../global/UH1.vue"
+import UH2 from "../global/UH2.vue"
+import UPieButton from '../global/UPieButton.vue';
+import Nav from '../layouts/Nav.vue';
 
-import { useStorage } from "../composables/useStorage";
+import { useStorage } from "../../composables/useStorage";
 const { toggleVisibleBidModal } = useStorage();
 
 </script>
@@ -27,8 +27,16 @@ const { toggleVisibleBidModal } = useStorage();
                 <img src="/img/car.png" alt="">
             </div>
             <div class="absolute right-11 bottom-11 z-20 flex items-center">
-                <UPieButton id="1" size="48" :duration="5"><</UPieButton>
-                <UPieButton id="2" size="64" :duration="5" :animate="true">></UPieButton>
+                <UPieButton id="1" size="48" :duration="5">
+                    <span class="material-symbols-outlined">
+                        arrow_forward_ios
+                    </span>
+                </UPieButton>
+                <UPieButton id="2" size="64" :duration="5" :animate="true">
+                    <span class="material-symbols-outlined">
+                        arrow_back_ios
+                    </span>
+                </UPieButton>
             </div>
         </div>
     </header>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import Logo from "./Logo.vue";
-import ULink from "./ULink.vue";
-import { useStorage } from "../composables/useStorage";
+import Logo from "../Logo.vue";
+import ULink from "../global/ULink.vue";
+import { useStorage } from "../../composables/useStorage";
 
 const { toggleVisibleBidModal, toggleVisibleMenuModal } = useStorage();
 
@@ -26,8 +26,7 @@ const { toggleVisibleBidModal, toggleVisibleMenuModal } = useStorage();
                 <RouterLink to="/" class="text-smoke-300 font-semibold">О нас</RouterLink>
                 <UButton type="border" @click="toggleVisibleBidModal">Оставить заявку</UButton>
             </div>
-            <button 
-                @click="toggleVisibleMenuModal"
+            <button @click="toggleVisibleMenuModal"
                 class="flex justify-end items-center visible md:visible lg:invisible w-max">
                 <span class="material-symbols-outlined">
                     menu

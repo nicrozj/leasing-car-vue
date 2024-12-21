@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import UH1 from './UH1.vue';
-import UP from './UP.vue';
-import UInput from './UInput.vue';
-import UButton from './UButton.vue';
+import UH1 from '../global/UH1.vue';
+import UP from '../global/UP.vue';
+import UInput from '../global/UInput.vue';
+import UButton from '../global/UButton.vue';
 
-import { useStorage } from "../composables/useStorage";
+import { useStorage } from "../../composables/useStorage";
 
 interface Props {
     class?: string;
