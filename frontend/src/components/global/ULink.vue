@@ -5,5 +5,7 @@ interface Props {
 const props = defineProps<Props>();
 </script>
 <template>
-    <RouterLink :to="props.to" class="text-3xl text-smoke-300 font-semibold"><slot></slot></RouterLink>
+    <RouterLink 
+        :to="props.to" 
+        class="text-smoke-300 hover:text-accent transitions-all font-semibold"><slot></slot></RouterLink>
 </template>

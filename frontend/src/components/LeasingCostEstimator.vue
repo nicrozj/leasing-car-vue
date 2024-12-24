@@ -42,7 +42,7 @@ calculate();
 </script>
 <template>
     <section class="flex flex-col mb-20">
-        <UH1 classes="text-accent w-1/2">Рассчитайте стоимость автомобиля в лизинг</UH1>
+        <UH1 class="text-accent max-w-[600px] max-sm:w-1/2 text-[40px] sm:text-5xl">Рассчитайте стоимость автомобиля в лизинг</UH1>
         <div class="grid sm:grid-cols-1 lg:grid-cols-3 space-between gap-6 mt-8">
             <UInputSlider @blur="handleBlurEvent" type=" number" label="Стоимость автомобиляx" v-model="costInput"
                 :min="1000000" :max="3300000">

@@ -7,10 +7,10 @@ const { toggleVisibleBidModal, toggleVisibleMenuModal } = useStorage();
 
 </script>
 <template>
-    <nav class="sticky top-0 items-center flex justify-between z-50 px-5 py-3 bg-white sm:py-6">
+    <nav class="sticky top-0 items-center flex justify-between z-50 px-5 py-3 bg-black sm:py-6 sm:bg-white">
         <div class="flex gap-4 items-center">
             <div>
-                <Logo />
+                <Logo theme="black" />
             </div>
             <div class="hidden gap-4 items-center sm:flex">
                 <div class="h-8 w-[1px] bg-accent bg-opacity-50"></div>
@@ -21,14 +21,14 @@ const { toggleVisibleBidModal, toggleVisibleMenuModal } = useStorage();
         </div>
         <div class="flex items-center">
             <div class="hidden items-center gap-8 lg:flex">
-                <RouterLink to="/" class="text-smoke-300 font-semibold">Лизинг</RouterLink>
-                <RouterLink to="/" class="text-smoke-300 font-semibold">Каталог</RouterLink>
-                <RouterLink to="/" class="text-smoke-300 font-semibold">О нас</RouterLink>
+                <ULink to="/">Лизинг</ULink>
+                <ULink to="/">Каталог</ULink>
+                <ULink to="/">О нас</ULink>
                 <UButton type="border" @click="toggleVisibleBidModal">Оставить заявку</UButton>
             </div>
             <button @click="toggleVisibleMenuModal"
                 class="flex justify-end items-center visible md:visible lg:invisible w-max">
-                <span class="material-symbols-outlined">
+                <span class="text-white material-symbols-outlined sm:text-black">
                     menu
                 </span>
             </button>
