@@ -17,8 +17,8 @@ const sum = ref(0);
 const period = ref(0);
 const percent = ref(0);
 
-const maxInitialPaymentValue = computed(() => (Math.round(costInput.value * 0.9)));
-const minInitialPaymentValue = computed(() => (Math.round(costInput.value * 0.2)));
+const maxInitialPaymentValue = computed(() => Math.round(costInput.value * 0.9));
+const minInitialPaymentValue = computed(() => Math.round(costInput.value * 0.2));
 
 const formatMoney = (value: number) => {
     return value.toLocaleString('ru-RU', {
@@ -31,6 +31,8 @@ const formatMoney = (value: number) => {
 function calculate() {
     sum.value = Math.round(initialPaymentInput.value + (costInput.value - initialPaymentInput.value) * (1 + 0.01 * periodInput.value));
     period.value = Math.round((costInput.value - initialPaymentInput.value) * (1 + 0.01 * periodInput.value) / periodInput.value)
+    initialPaymentInput.value = Math.min(maxInitialPaymentValue.value, initialPaymentInput.value);
+    initialPaymentInput.value = Math.max(minInitialPaymentValue.value, initialPaymentInput.value);
     percent.value = Math.round((initialPaymentInput.value / costInput.value) * 100);
 }
 
@@ -42,7 +44,8 @@ calculate();
 </script>
 <template>
     <section class="flex flex-col mb-20">
-        <UH1 class="text-accent max-w-[600px] max-sm:w-1/2 text-[40px] sm:text-5xl">Рассчитайте стоимость автомобиля в лизинг</UH1>
+        <UH1 class="text-accent max-w-[600px] max-sm:w-1/2 text-[40px] sm:text-5xl">Рассчитайте стоимость автомобиля в
+            лизинг</UH1>
         <div class="grid sm:grid-cols-1 lg:grid-cols-3 space-between gap-6 mt-8">
             <UInputSlider @blur="handleBlurEvent" type=" number" label="Стоимость автомобиляx" v-model="costInput"
                 :min="1000000" :max="3300000">
@@ -54,7 +57,8 @@ calculate();
                     <UH3 classes="text-smoke-300">{{ percent }}%</UH3>
                 </div>
             </UInputSlider>
-            <UInputSlider type="date" label="Срок лизинга" v-model="periodInput" :min="6" :max="60">
+            <UInputSlider type="date" label="Срок лизинга" v-model="periodInput" :min="6" :max="60"
+                @blur="handleBlurEvent">
                 <span class="text-3xl font-nekst text-smoke-300">мес.</span>
             </UInputSlider>
         </div>
